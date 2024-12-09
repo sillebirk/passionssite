@@ -1,0 +1,307 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Hubballi", serif;
+  margin: 10px;
+  padding: 0 10px 10px 10px;
+  background-color: #faf0e6;
+}
+
+h1 {
+  font-family: "Martian Mono", monospace;
+  color: darkred;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "Martian Mono", monospace;
+  color: rgb(103, 16, 16);
+  font-size: 30px;
+  font-weight: 300;
+  margin: 30px 0 10px 0;
+}
+
+p {
+  font-size: 24px;
+}
+
+/* Header og footer */
+
+header,
+footer {
+  font-size: 25px;
+  background-color: antiquewhite;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logobillede {
+  height: 200px;
+  width: 300px;
+  margin: 2px;
+}
+
+/* Hero section */
+
+.hero {
+  background-image: url(hero_section/Frame\ 1_result.webp);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro .image-with-text img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid */
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 10px;
+}
+
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.billede_2,
+.billede_3,
+.billede_4,
+.billede_5 {
+  aspect-ratio: 1/1;
+}
+
+.billede_1,
+.billede_2,
+.billede_3,
+.billede_4,
+.billede_5 {
+  margin: 10px 0 10px 0;
+}
+
+.order {
+  order: -1;
+}
+
+/* Video Section */
+
+.video-section {
+  padding: 10px;
+}
+
+.video-section .video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.video-section video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8/3.38;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8/3.5;
+}
+
+/* Responsiv til desktop-view */
+
+@media (min-width: 850px) {
+  body {
+    margin: 10px;
+    padding: 0 100px 10px 100px;
+  }
+
+  .video-section {
+    display: grid;
+    grid-template-rows: auto;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid_1-1 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+
+  .billede_2 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .billede_3 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+  }
+
+  .billede_4 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .billede_5 {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .billede_1,
+  .billede_2,
+  .billede_3,
+  .billede_4,
+  .billede_5 {
+    object-fit: cover;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0 20px 0;
+  }
+
+  .grid_2-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  gap: 10px;
+  margin: 20px 20px;
+}
+
+/* Menu */
+
+header {
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  border: 2px;
+}
+
+.logo img {
+  max-width: 70%;
+  margin: 5px 5px 5px 0px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  font-family: "Martel", serif;
+  font-weight: 300;
+  font-style: normal;
+  display: block;
+  padding: 10px;
+  color: darkred;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: darksalmon;
+  transform: scale(1.02);
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 3px;
+  background-color: #8b0000;
+  margin-bottom: 10px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+@media screen and (max-width: 850px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #feecca;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+
+  .logo {
+    margin: 0px;
+    padding: 0px;
+  }
+}
